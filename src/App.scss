@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "Breakpoints";
+canvas{
+  position: absolute;
+  inset: 0 ;
+  margin: auto;
+  background: wheat;
+}
+body{
+
+}
+
+h1{
+  position: fixed;
+  right: 40px;
+  top: 20px;
+  padding: 20px 40px;
+  background: rgba(98, 216, 128, 0.842);
+
+}
+
+.btn{
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  padding: 0 32px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: var(--gray-50, #D9D9D9);
+  border: 1px solid var(--brown-110, #524848);
+  background: var(--brown-40, #262121);
+  font-size: 14px;
+&:disabled{
+   opacity: .7;
+ }
+&:hover{
+   border: 1px solid var(--brown-110, #524848);
+
+   background: var(--brown-110, #524848);
+ }
+&.red{
+   border: 1px solid var(--secondary-red, #F04438);
+   background: rgba(205, 37, 83, 0.12) !important;
+ }
+&.dark{
+   border: 1px solid var(--brown-100, #453F3F);
+   background: var(--brown-40, #262121);
+ }
+&.transparent{
+   background: transparent;
+ }
+&.normal{
+   border: 1px solid var(--brown-110, #524848);
+   background: var(--brown-90, #423A3A);
+   color: var(--gray-50, #D9D9D9);
+ }
+&.grey-50{
+   border: 1px solid var(--gray-50, #D9D9D9);
+   background: var(--gray-50, #D9D9D9);
+   border: 1px solid var(--brown-110, #524848);
+
+   color: var(--primary-background, #0D0807);
+ }
+&.grey-90{
+   color: var(--brown-40, #262121);
+   background: var(--gray-90, #A6A6A6);
+ }
+&.big{
+   width: 100%;
+@include md(){
+  width: 178px;
+}
+}
+}
+
+input,textarea{
+  outline: none;
+  background: #342E2E;
+  /* Brown/110 */
+  resize: none;
+  border: 1px solid #524848;
+  border-radius: 8px;
+  color: #D9D9D9;
+  padding: 12px;
+}
