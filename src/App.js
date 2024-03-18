@@ -8,6 +8,10 @@ import JoinGameMenu from "./Components/JoinGameMenu";
 
 export const menuStateAtom = atom("")
 export const isMenuOpenAtom = atom(true)
+export const sharedCodeAtom = atom("")
+
+
+
 function App() {
 
     const [menuState,setMenuState]=useAtom(menuStateAtom)
