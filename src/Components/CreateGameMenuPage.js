@@ -4,17 +4,20 @@ import {menuStateAtom, sharedCodeAtom} from "../App";
 import { socket } from '../socket';
 
 const CreateGameMenuPage = () => {
-    
+
     const [code, setCode] = useAtom(sharedCodeAtom);
 
     useEffect(() => {
        if(!code){
-        socket.emit('create_host');
-        console.log("hello world");
-        socket.on('host_created', (code) => {
-            setCode(code);
-        });
+            socket.emit('create_host');
+            console.log("hello world");
+            socket.on('host_created', (code) => {
+                setCode(code);
+            });
        }
+        socket.on('game_started',()=>{
+            setMenuState("gameJoin")
+        })
     }, [])
 
     const [menuState,setMenuState] = useAtom(menuStateAtom)
